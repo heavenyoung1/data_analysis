@@ -247,4 +247,46 @@ int main() {
 }
 
 // EX 18; Даны три натуральных числа A, B, C. Определите, существует ли треугольник с такими сторонами. Если треугольник существует, выведите строку YES, иначе выведите строку NO.
-Треугольник — это три точки, не лежащие на одной прямой.
+//Треугольник — это три точки, не лежащие на одной прямой.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+      int a, b, c;
+      cin >> a >> b >> c;
+      if (a <= b && b <= c) {
+          if (a + b > c) {
+              cout << "YES";
+          } else {
+              cout << "NO";
+      }} else if (a <= b && b >= c) {
+          if (a + c > b) {
+              cout << "YES";
+          } else {
+              cout << "NO";
+      }} else if (a >= b && b >= c) {
+          if (b + c > a) {
+              cout << "YES";
+          } else {
+              cout << "NO";
+      }} else if (a >= b && b <= c) {
+          if (b + c > a) {
+              cout << "YES";
+          } else {
+              cout << "NO";
+      }} else if (a >= b && b <= c) {
+          if (a + b > c) {
+              cout << "YES";
+          } else {
+              cout << "NO";
+      }} else if (a <= b && b >= c) {
+          if (a + c > b) {
+              cout << "YES";
+          } else {
+              cout << "NO";
+              }}
+      return 0;
+        }
+
+// EX 19; 
