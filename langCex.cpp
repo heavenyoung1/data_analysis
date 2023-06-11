@@ -329,3 +329,77 @@ int main() {
   cout << ((a == c || b == d) ? "YES" : "NO");
   return 0;
 }
+
+// EX 21; Шахматный король ходит по горизонтали, вертикали и диагонали, но только на 1 клетку. Даны две различные клетки шахматной доски, определите, может ли король попасть с первой клетки на вторую одним ходом.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  if (c - a <= 1 && d - b <= 1 && c - a >= -1 && d - b >= -1)  {
+      cout << "YES";
+  } else if (a - c <= 1 && b - d <= 1 && a - c >= -1 && b - d >= -1) {
+      cout << "YES";
+  } else {
+      cout << "NO";
+  }
+  return 0;
+}
+
+// РЕШЕНИЕ  КОРОТКОЕ НИЖЕ!
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    cout << (((c - a) * (c - a) > 1) || ((d - b) * (d - b) > 1) ? "NO" : "YES");
+    return 0;
+}
+
+// EX 22; Шахматный слон ходит по диагонали. Даны две различные клетки шахматной доски, определите, может ли слон попасть с первой клетки на вторую одним ходом.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  if ((c - a) * (c - a) == (d - b) * ( d - b) || (a - c) * (a - c) == (b - d) * (b - d)) {
+      cout << "YES";
+  } else {
+      cout << "NO";
+  }
+  return 0;
+}
+
+// КОРОТКОЕ РЕШЕИЕ, В ОДНУ СТРОКУ, НОРМ ТЕМА, ВЗЯЛИ МОДУЛЬ, ПРИ ЭТОМ ИМПОРТИРУЕМ CMATH, ЧТОБЫ НЕ БЫЛО ПРОБЛЕМ С 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  cout << ((abs(c - a) == abs(d - b) || abs(a - c) == abs(b - d)) ? "YES" : "NO");
+  return 0;
+}
+
+// ПОСМОТРЕЛ РЕШЕНИЯ НА СТЕПИКЕ, МОЖНО ЕЩЁ УМЕНЬШИТЬ КОД, БЫЛО ОДНО ЛИШНЕЕ УСЛОВИЕ, ДУМАЛ ЧТО БЕЗ НЕГО РАБОТАТЬ НЕ БУДЕТ, НО БЫЛ НЕ ПРАВ!
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+int main() {
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  cout << (abs(c - a) == abs(d - b) ? "YES" : "NO");
+  return 0;
+}
+
+// EX 23; Шахматный ферзь ходит по диагонали, горизонтали или вертикали. Даны две различные клетки шахматной доски, определите, может ли ферзь попасть с первой клетки на вторую одним ходом.
+
+
