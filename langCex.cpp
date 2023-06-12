@@ -402,4 +402,72 @@ int main() {
 
 // EX 23; Шахматный ферзь ходит по диагонали, горизонтали или вертикали. Даны две различные клетки шахматной доски, определите, может ли ферзь попасть с первой клетки на вторую одним ходом.
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  if (abs(a - c) == abs(b - d)) {
+      cout << "YES";
+  } else if (a == c || b == d) {
+      cout << "YES";
+  } else {
+      cout << "NO";
+  }
+  return 0;
+}
+
+// КОРОТКОЕ РЕШЕНИЕ ЗАДАЧИ 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  cout << ((abs(a - c) == abs(b - d)) || (a == c || b == d) ? "YES" : "NO");
+  return 0;
+}
+
+// EX 24; Шахматный конь ходит буквой “Г” — на две клетки по вертикали в любом направлении и на одну клетку по горизонтали, или наоборот. Даны две различные клетки шахматной доски, определите, может ли конь попасть с первой клетки на вторую одним ходом.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    if (c == a + 2 && d == b + 1 || c == a - 2 && d == b - 1) {
+        cout << "YES";
+    } else if (c == a + 1 && d == b + 2 || c == a - 1 && d == b - 2) {
+        cout << "YES";
+    } else if (c == a - 1 && d == b + 2 || c == a + 1 && d == b - 2) {
+        cout << "YES";
+    } else if (c == a - 2 && d == b + 1 || c == a + 2 && d == b - 1) {
+        cout << "YES";
+    } else {
+        cout << "NO";
+    }
+    return 0;
+}
+
+// КОРОТКОЕ РЕШЕНИЕ
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
+    cout << ((a - c) * (a - c) + (b - d) * (b - d) == 5 ? "YES" : "NO");
+    return 0;
+}
+
+// EX 25; Шоколадка имеет вид прямоугольника, разделенного на N×M долек. Шоколадку можно один раз разломить по прямой на две части. Определите, можно ли таким образом отломить от шоколадки ровно K долек.
+
 
