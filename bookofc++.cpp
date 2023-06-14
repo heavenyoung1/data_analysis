@@ -102,4 +102,26 @@ int main() {
 
 // 4. Напишите программу для отображения в консоли чисел Фибоначчи.
 
+#include <iostream>
+#include <cstdlib>
+using namespace std;
 
+int main() {
+  int count;
+  cout << "Введите количество чисел: ";
+  cin >> count;
+
+  int first = 0;
+  int second = 1;
+
+  int i = 0;
+  while (i < count) {
+    cout << first << " ";
+    int next = first + second;
+    first = second;
+    second = next;
+    i++;
+  }
+}
+
+// 6. Напишите программу для перевода километров в мили.
