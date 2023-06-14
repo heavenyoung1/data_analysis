@@ -29,4 +29,77 @@ int main() {
   return 0;
 }
 
-// 
+// Создание массива
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+  const int n = 10;
+  int bnm [n+1]; //создание целочисленного массива  
+  int k = 0;
+  bnm[0] = 1;
+  cout << bnm[0];
+  while (k < n) {
+    bnm[k + 1] = bnm[k] * (n - k) / (k + 1);
+    cout << " " << bnm[k + 1];
+    k++;
+  }
+}
+
+
+// ЗАДАЧИ ДЛЯ САМОСТОЕТЯЛЬНОГО РЕШЕНИЯ ИЗ КНИГИ
+
+// 1.Напишите программу, которой при выполнени в консольное окно выводятся натуральные числа от 1 до 10
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+  int k, n;
+  cin >> k >> n;
+  while (k <= n) {
+    cout << k << endl;
+    k++;
+  }
+}
+
+// 2. Напишите программу, которой отображаются пять первых нечетных чисел
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+  int k, n, l = 1;
+  cin >> k >> n;
+  while (k <= n and l <= 5) {
+    if (k % 2 != 0) {
+      cout << k << endl;
+      k++;
+      l++;
+    } else {
+      k++;
+    }}
+}
+
+// 3. Напишите программу для отображения в консоли чисел, которые при делении на 4 в остатке дают 3
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+  int a = 1, b, c;
+  cin >> b;
+  while (a < b) {
+    cout <<  (a * 4 + 3) << endl;
+    a++;
+  }
+}
+
+// 4. Напишите программу для отображения в консоли чисел Фибоначчи.
+
+
