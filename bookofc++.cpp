@@ -125,3 +125,15 @@ int main() {
 }
 
 // 6. Напишите программу для перевода километров в мили.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int x;
+  cout << "Напиши количество километров: ";
+  cin >> x;
+  cout << 1.60934 * x;
+}
+
+//
