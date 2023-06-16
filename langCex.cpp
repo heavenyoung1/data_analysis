@@ -500,3 +500,25 @@ int main() {
 // EX 26; Яша плавал в бассейне размером N×M метров и устал. В этот момент он обнаружил, что находится на расстоянии X метров от одного из длинных бортиков (не обязательно от ближайшего) и Y метров от одного из коротких бортиков. Какое минимальное расстояние должен проплыть Яша, чтобы выбраться из бассейна на бортик?
 
 
+
+
+
+//EX 27; Дано три числа. Упорядочите их в порядке неубывания.
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+bool comp(int a, int b) {
+ return (a < b); 
+}
+int main() {
+  int a, b, c, min, max, mid;
+  cin >> a >> b >> c;
+  min = std::min({a, b, c}, comp);
+  max = std::max({a, b, c}, comp);
+  mid = (a + b + c) - (min + max);
+  cout << min << " " << mid << " " << max;
+return 0;
+}
