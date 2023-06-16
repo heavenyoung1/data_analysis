@@ -522,3 +522,35 @@ int main() {
   cout << min << " " << mid << " " << max;
 return 0;
 }
+
+// EX 28;
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+bool comp(int a, int b) {
+return (a < b);
+}
+
+int main() {
+    int n, m, x, y, a, b, n1, m1;
+    cin >> n >> m >> x >> y;
+    if (n < m) {
+        a = n - x;
+        b = m - y;
+        cout << std::min({x, y, a, b, n, m}, comp) << "\n";
+    } else if (n > m) {
+    n1 = m;
+    m1 = n;
+    a = n1 - x;
+    b = m1 - y;
+    cout << std::min({x, y, a, b, n1, m1}, comp) << "\n";
+}
+return 0;
+}
+
+// EX 29; Есть две коробки, первая размером A1×B1×C1, вторая размером A2×B2×C2. Определите, можно ли разместить одну из этих коробок внутри другой, при условии, что поворачивать коробки можно только на 90 градусов вокруг ребер.
+
+
