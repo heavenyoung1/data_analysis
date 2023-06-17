@@ -576,3 +576,37 @@ int main() {
   }
   return 0;
   }
+
+
+// hhh
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+
+bool comp(int a, int b) {
+return (a < b);
+}
+
+int main() {
+  int a1, b1, c1, a2, b2, c2, x1, y1, z1, x2, y2, z2;
+  cin >> a1 >> b1 >> c1 >> a2 >> b2 >> c2;
+  x1 = std::min({a1, b1, c1}, comp);
+  z1 = std::max({a1, b1, c1}, comp);
+  y1 = (a1 + b1 + c1) - (x1 + z1);
+  x2 = std::min({a2, b2, c2}, comp);
+  z2 = std::max({a2, b2, c2}, comp);
+  y2 = (a2 + b2 + c2) - (x2 + z2);
+  cout << x1 << y1 << z1 << x2 << y2 << z2;
+  if ((x2 - x1) + (y2 - y1) + (z2 - z1) == 0) {
+    cout << "Boxes are equal";
+  } else if ((x1 == x2 && y1 == y2 && z1 > x2) || (x1 == x2 && y1 > y2 && z1 == z2) || (x1 > x2 && y1 == y2 && z1 == z2) || (x1 == x2 && y1 > y2 && z1 > z2) || (x1 > x2 && y1 == y2 && z1 > z2) || (x1 > x2 && y1 > y2 && z1 == z2))  {
+    cout << "The first box is larger than the second one"; 
+  } else if ((x1 == x2 && y1 == y2 && z1 < x2) || (x1 == x2 && y1 < y2 && z1 == z2) || (x1 < x2 && y1 == y2 && z1 == z2) || (x1 == x2 && y1 < y2 && z1 < z2) || (x1 < x2 && y1 == y2 && z1 < z2) || (x1 < x2 && y1 < y2 && z1 == z2))  {
+    cout << "The first box is smaller than the second one";
+  } else {
+      cout << "Boxes are incomparable";
+  }
+  return 0;
+  }
