@@ -556,29 +556,8 @@ return 0;
 #include <iostream>
 using namespace std;
 
-int main() {
-  int a1, b1, c1, a2, b2, c2;
-  cin >> a1 >> b1 >> c1 >> a2 >> b2 >> c2;
-  swap(a1, b1);
-  swap (a1, c1);
-  swap (b1, c1);
-  swap(a2, b2);
-  swap (a2, c2);
-  swap (b2, c2);
-  if ((a2 - a1) + (b2 - b1) + (c2 - c1) == 0) {
-    cout << "Boxes are equal";
-  } else if ((a2 - a1) + (b2 - b1) + (c2 - c1) <= 0) {
-    cout << "The first box is larger than the second one"; 
-  } else if ((a2 - a1) + (b2 - b1) + (c2 - c1) >= 0) {
-    cout << "The first box is smaller than the second one";
-  } else {
-      cout << "Boxes are incomparable";
-  }
-  return 0;
-  }
 
-
-// hhh
+// РЕШЕНИЕ КУДА ПРОЩЕ! ПРОШЛОЕ НЕПРАВИЛЬНО, РАЗОБРАТЬСЯ СО SWAP
 
 #include <iostream>
 #include <algorithm>
@@ -598,15 +577,15 @@ int main() {
   x2 = std::min({a2, b2, c2}, comp);
   z2 = std::max({a2, b2, c2}, comp);
   y2 = (a2 + b2 + c2) - (x2 + z2);
-  cout << x1 << y1 << z1 << x2 << y2 << z2;
-  if ((x2 - x1) + (y2 - y1) + (z2 - z1) == 0) {
-    cout << "Boxes are equal";
-  } else if ((x1 == x2 && y1 == y2 && z1 > x2) || (x1 == x2 && y1 > y2 && z1 == z2) || (x1 > x2 && y1 == y2 && z1 == z2) || (x1 == x2 && y1 > y2 && z1 > z2) || (x1 > x2 && y1 == y2 && z1 > z2) || (x1 > x2 && y1 > y2 && z1 == z2))  {
-    cout << "The first box is larger than the second one"; 
-  } else if ((x1 == x2 && y1 == y2 && z1 < x2) || (x1 == x2 && y1 < y2 && z1 == z2) || (x1 < x2 && y1 == y2 && z1 == z2) || (x1 == x2 && y1 < y2 && z1 < z2) || (x1 < x2 && y1 == y2 && z1 < z2) || (x1 < x2 && y1 < y2 && z1 == z2))  {
-    cout << "The first box is smaller than the second one";
+  //cout << x1 << y1 << z1 << x2 << y2 << z2;
+  if (x1 == x2 && y1 == y2 && z1 == z2) {
+        cout<<"Boxes are equal"; 
+  } else if (x1 <= x2 && y1 <= y2 && z1 <= z2) {
+            cout<<"The first box is smaller than the second one"; 
+  } else if(x1 >= x2 && y1 >= y2 && z1 >=z2) {
+            cout<<"The first box is larger than the second one"; 
   } else {
-      cout << "Boxes are incomparable";
-  }
-  return 0;
-  }
+            cout<<"Boxes are incomparable";
+}
+    return 0;
+}
