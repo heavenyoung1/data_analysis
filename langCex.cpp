@@ -638,3 +638,28 @@ int main() {
 
 // EX 33; Дано натуральное число N. Выведите слово YES, если число N является точной степенью двойки, или слово NO в противном случае.
 
+#include <iostream>
+#include <cmath>
+// a = pow(2, i);
+using namespace std;
+
+int main() {
+  int a, n, i  = 0;
+  cin >> n;
+  while (pow(2, i) != n || pow(2, i) <= n) {
+    a = pow(2, i);
+    if (a == n) {
+      cout << "YES";
+      break;
+    } else if (a > n) {
+      cout << "NO";
+      break;
+    } else if (a < n) {
+      i++;
+    } else if (i == 30) {
+      break;
+    }
+}
+
+  return 0;
+}
