@@ -839,4 +839,30 @@ int main() {
 
 // EX 41; Дана последовательность натуральных чисел, завершающаяся числом 0. Определите, какое наибольшее число подряд идущих элементов этой последовательности равны друг другу. Если не нашлось ни одной пары, тройки и т.д. элементов, равных друг другу, то программа должна вывести число 1.
 
+#include <iostream>
+using namespace std;
 
+int main() {
+  int num = -1;
+  int prenum = -1;
+  int maxlength = 0;
+  int currentlength = 1;
+
+  cin >> num;
+  
+  while (num != 0 ) {
+    if (num == prenum) {
+      currentlength++;
+    }
+    else {
+      currentlength = 1;
+    }
+    if (currentlength > maxlength) {
+      maxlength = currentlength;
+    }
+    prenum = num;
+    cin >> num; 
+  }
+  cout << maxlength;
+  return 0;
+}
