@@ -889,3 +889,73 @@ int main() {
   return 0;
 }
 
+
+// РЕШУ ПОТОМ
+
+// Дано положительное действительное число X. Выведите его дробную часть.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+  double n;
+  cin >> n;
+  cout << double (n) - int (n);
+  return 0;
+}
+
+// EX 45; Дано положительное действительное число X. Выведите его первую цифру после десятичной точки.
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+    
+using namespace std;
+
+int main() {
+    double n, x;
+    cin >> n;
+    x = n * 10;
+    x = trunc(x);
+    x = (int) x % 10;
+    cout << x;
+    return 0;
+}
+
+// EX 46; Даны длины сторон треугольника. Вычислите площадь треугольника.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  double a, b, c, p, s;
+  cin >> a >> b >> c;
+  p = (a + b + c) / 2;
+  s = sqrt( p * (p - a) * (p - b) * (p - c) );
+  cout << s;
+  return 0;
+}
+
+// EX 47; Процентная ставка по вкладу составляет P процентов годовых, которые прибавляются к сумме вклада в конце года. Вклад составляет X рублей Y копеек. Определите размер вклада через год.
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+  double p, x, y, sum, per, rub, cop;
+  cin >> p >> x >> y;
+  sum = x * 100 + y;
+  per = (sum * (p / 100)) + sum;
+  rub = trunc(per / 100);
+  cop = per - rub * 100;
+  cout << rub << " " << trunc(cop);
+}
+
+// EX 48; Процентная ставка по вкладу составляет P процентов годовых, которые прибавляются к сумме вклада через год. Вклад составляет X рублей Y копеек. Определите размер вклада через K лет.
+
+
