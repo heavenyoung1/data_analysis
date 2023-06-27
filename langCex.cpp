@@ -994,3 +994,27 @@ int main() {
 }
 
 //EX 50; Определите стандартное отклонение для данной последовательности натуральных чисел, завершающейся числом 0.
+
+#include <iostream>
+#include <cmath>
+#include <math.h>
+#include <iomanip>
+using namespace std;
+
+int main() {
+  int x, sum = 0, n = 0, quad = 0;
+  double sigma = 0;
+  while (cin >> x && x != 0) {
+    quad += pow(x, 2);
+    sum += x;
+    n++;
+  }
+  sigma = sqrt( (quad - (pow(sum, 2)) / n) / (n - 1) );
+  cout << setprecision(11) << fixed << sigma;
+  return 0;
+}
+
+// EX 51; Дан многочлен P(x)=anxn + an−1xn−1+ … + a1x + a0 и число x. Вычислите значение этого многочлена, воспользовавшись схемой Горнера.
+
+
+
