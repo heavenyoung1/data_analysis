@@ -978,4 +978,19 @@ int main() {
 
 // EX 49; Определите среднее значение всех элементов последовательности, завершающейся числом 0.
 
+#include <iostream>
+#include <iomanip>
+using namespace std;
 
+int main() {
+  int n = -1, i = 0;
+  double sum = 0;
+  while (cin >> n && n != 0) {
+    sum += n;
+    i++;
+  }
+  cout << setprecision(11) << fixed << sum / i;
+  return 0;
+}
+
+//EX 50; Определите стандартное отклонение для данной последовательности натуральных чисел, завершающейся числом 0.
