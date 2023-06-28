@@ -1016,5 +1016,38 @@ int main() {
 
 // EX 51; Дан многочлен P(x)=anxn + an−1xn−1+ … + a1x + a0 и число x. Вычислите значение этого многочлена, воспользовавшись схемой Горнера.
 
+//РЕШУ ПОТОМ
 
+// EX 52;  Даны действительные коэффициенты a, b, c, при этом a ≠ 0 . Решите квадратное уравнение ax2 + bx + c = 0 и выведите все его корни.
+
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+bool comp(int a, int b) {
+ return (a < b); 
+}
+
+int main() {
+  //int d, x1, x2;
+  double a, b, c, d, x1, x2;
+  cin >> a >> b >> c;
+  d = (pow(b, 2)) - 4 * a * c;
+
+  if (d > 0) {
+    x1 = (-b - sqrt(d)) / (2 * a);
+    x2 = (-b + sqrt(d)) / (2 * a);
+    cout << min({x1, x2}, comp) << " " << max({x1, x2}, comp);
+  } else if (d == 0) {
+    x1 = (-b - sqrt(d)) / (2 * a);
+    cout << x1;
+  }
+}
+
+// b /= 2 * a == b = b / (2 * a) ЗАПОМНИТЬ!!!
+
+// EX 53; аны действительные коэффициенты a, b, c. Решите уравнение ax2 + bx + c = 0 и выведите все его корни
 
