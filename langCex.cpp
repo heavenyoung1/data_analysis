@@ -1051,3 +1051,41 @@ int main() {
 
 // EX 53; аны действительные коэффициенты a, b, c. Решите уравнение ax2 + bx + c = 0 и выведите все его корни
 
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+bool comp(int a, int b) {
+ return (a < b); 
+}
+
+int main() {
+  double a, b, c, x, d, x1, x2;
+  cin >> a >> b >> c;
+  if (a == 0 && b == 0 && c == 0) {
+    cout << 3;
+  } else if (a == 0 && b == 0 && c != 0) {
+    cout << 0;
+  } else if (a == 0 && b != 0) {
+    cout << 1 << " " << - c / b;  
+  } else if (a != 0 || b != 0 || c != 0) {
+    d = pow(b, 2) - 4 * a * c;
+    if (d > 0) {
+      x1 = (- b - sqrt(d)) / (2 * a);
+      x2 = (- b + sqrt(d)) / (2 * a);
+      cout << 2 << " " << min({x1, x2}, comp) << " " << max({x1, x2}, comp);
+    } else if (d == 0) {
+      x1 = - b / (2 * a);
+      cout << 1 << " " << x1;
+    } else if (d < 0) {
+      cout << 0;
+    }
+  }
+}
+
+// EX 54; Выведите два числа x и y, являющиеся решением этой системы.
+
+
