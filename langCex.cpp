@@ -1201,3 +1201,57 @@ int main() {
 
 EX 5; Дан массив целых чисел. Если в нем есть два соседних элемента одного знака, выведите эти числа. Если соседних элементов одного знака нет - не выводите ничего. Если таких пар соседей несколько - выведите первую пару.
 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+bool comp(int a, int b) {
+ return (a < b); 
+}
+
+int main() {
+    int n, p = 0, p1, p2;
+    cin >> n;
+    vector <int> a(n);
+    for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    }
+    for (int i = 1; i <= n - 1; i++) {
+      if (a[i] > 0 && a[i - 1] > 0 || a[i] < 0 && a[i - 1] < 0) {
+        cout << min({a[i], a[i - 1]}, comp) << " " << max({a[i], a[i - 1]}, comp);
+        break;
+      } else {
+        continue;
+      }
+    }
+    return 0;
+}
+
+EX 6; Выведите значение наименьшего из всех положительных элементов в массиве. Известно, что в массиве есть хотя бы один положительный элемент.
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, p = 0, min = 100000;
+    cin >> n;
+    vector <int> a(n);
+    for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    }
+    for (int i = 0; i <= n - 1; i++) {
+      if (a[i] > 0 && a[i] < min) {
+        min = a[i];
+        continue;
+      } else {
+        continue;
+      }
+    }
+    cout << min;
+    return 0;
+}
+
+EX 7; Выведите значение наименьшего нечетного элемента списка, а если в списке нет нечетных элементов - выведите число 0.
+
