@@ -1131,3 +1131,73 @@ int main() {
 
 // EX 2; Выведите все четные элементы массива.
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector <int> a(n);
+    for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    }
+    for (int i = 0; i <= n - 1; i++) {
+      if (a[i] % 2 == 0) {
+        cout << a[i] << " ";
+      } else {
+        continue;
+      }
+    }
+    return 0;
+}
+
+// EX 3; Найдите количество положительных элементов в данном массиве
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, p = 0;
+    cin >> n;
+    vector <int> a(n);
+    for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    }
+    for (int i = 0; i <= n - 1; i++) {
+      if (a[i] > 0) {
+        p++;
+      } else {
+        continue;
+      }
+    }
+  cout << p;
+    return 0;
+}
+
+EX 4; Дан массив чисел. Выведите все элементы массива, которые больше предыдущего элемента .
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, p = 0;
+    cin >> n;
+    vector <int> a(n);
+    for (int i = 0; i < n; i++) {
+    cin >> a[i];
+    }
+    for (int i = 1; i <= n - 1; i++) {
+      if (a[i] > a[i - 1]) {
+        cout << a[i] << " ";
+      } else {
+        continue;
+      }
+    }
+    return 0;
+}
+
+EX 5; Дан массив целых чисел. Если в нем есть два соседних элемента одного знака, выведите эти числа. Если соседних элементов одного знака нет - не выводите ничего. Если таких пар соседей несколько - выведите первую пару.
+
