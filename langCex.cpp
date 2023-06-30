@@ -1292,3 +1292,29 @@ return 0;
 
 EX8; Дан список, упорядоченный по неубыванию элементов в нем. Определите, сколько в нем различных элементов.
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n, len, count = 0;
+    cin >> n;
+    vector <int> array;
+
+    for (int i = 0; i < n; i++) {
+        int temp;
+        cin >> temp;
+        array.push_back(temp);
+    }
+    vector <int> uniqueArray;
+  
+    for (int i = 0; i < n; i++) {
+      if (i == 0 || array[i] != array[i - 1]) {
+        uniqueArray.push_back(i);
+        count++;
+      }}
+    cout << count;
+    }
+
+// EX 9; Переставьте соседние элементы массива (A[0] c A[1], A[2] c A[3] и т.д.). Если элементов нечетное число, то последний элемент остается на своем месте.
+
