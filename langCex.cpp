@@ -1255,3 +1255,40 @@ int main() {
 
 EX 7; Выведите значение наименьшего нечетного элемента списка, а если в списке нет нечетных элементов - выведите число 0.
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  int n, i = 0, l;
+  long long min = 2147483647;
+  cin >> n;
+  vector <int> array;
+  for (int i = 0; i < n; i++) {
+    long long temp;
+    cin >> temp;
+    if (temp % 2 == 1 || temp % 2 == -1 || temp % 2 != 0) {
+      array.push_back(temp);
+    } else {
+      continue;
+    } 
+  }
+  if (array.size() == 0) {
+    cout << 0;
+    return 0;
+  }
+    
+  for (int i = 0; i < array.size(); i++) {
+    //cout << array[i] << endl;
+    if (array[i] <= min) {
+      min = array[i];
+    } else {
+      l = 0;
+    }
+  }
+cout << min;
+return 0; 
+}
+
+EX8; Дан список, упорядоченный по неубыванию элементов в нем. Определите, сколько в нем различных элементов.
+
