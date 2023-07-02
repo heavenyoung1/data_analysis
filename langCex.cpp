@@ -1318,3 +1318,31 @@ int main() {
 
 // EX 9; Переставьте соседние элементы массива (A[0] c A[1], A[2] c A[3] и т.д.). Если элементов нечетное число, то последний элемент остается на своем месте.
 
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  int n, el;
+  cin >> n;
+  vector <int> array(n);
+  for (int i = 0; i < n; i++) {
+    cin >> array[i];
+  }
+  if (n % 2 == 0) {
+    for (int i = 1; i < n; i += 2)  {
+      swap(array[i-1], array[i]);
+      cout << array[i - 1] << " " << array[i] << " ";
+  }
+  } else if (n % 2 != 0) {
+    for (int i = 1; i < n; i += 2)  {
+      swap(array[i - 1], array[i]);
+      cout << array[i - 1] << " " << array[i] << " "; 
+  }
+    cout << array[n - 1];
+  }
+  return 0;
+}
+
+// EX 10; Циклически сдвиньте элементы списка вправо (A[0] переходит на место A[1], A[1] на место A[2], ..., последний элемент переходит на место A[0]).
+
