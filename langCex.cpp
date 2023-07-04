@@ -1415,5 +1415,34 @@ int main() {
   }
 }
 
+// ОПТИМИЗИРОВАННОЕ РЕШЕНИЕ, БЕЗ СОЗДАНИЯ НОВОГО МАССИВА.
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, k;
+  cin >> n;
+  vector <int> array(n);
+  vector <int> uniqarray;
+  for (int i = 0; i < n; i++) cin >> array[i];
+  
+  for (int i = 0; i <= n; i++) {
+    k = 0;
+    for (int j = 0; j <= n; j++) {  
+      if (array[i] == array[j] && i != j) {
+        k++;
+      } else if (array[i] != array[j] && i != j) {
+          if (j == n && k == 0) {
+            cout << array[i] << " ";
+        }
+      }
+    }
+  }
+}
+
 // EX 13; Известно, что на доске 8×8 можно расставить 8 ферзей так, чтобы они не били друг друга. Вам дана расстановка 8 ферзей на доске, определите, есть ли среди них пара бьющих друг друга.
 
