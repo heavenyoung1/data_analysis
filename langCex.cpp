@@ -1383,3 +1383,37 @@ int main() {
 
 // EX 12; Дан массив. Выведите те его элементы, которые встречаются в массиве только один раз. Элементы нужно выводить в том порядке, в котором они встречаются в списке.
 
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, count;
+  cin >> n;
+  vector <int> array(n);
+  vector <int> uniqarray;
+  for (int i = 0; i < n; i++) cin >> array[i];
+  
+  for (int i = 0; i <= n; i++) {
+    count = 0;
+    for (int j = 0; j <= n; j++) {  
+      if (array[i] == array[j] && i != j) {
+        count++;
+        //i++;
+      } else if (array[i] != array[j] && i != j) {
+        if (j == n && count == 0) {
+          //cout << array[i] << endl;
+          uniqarray.push_back(array[i]);
+        }
+      }
+    }
+  }     
+  for (int i = 0; i < uniqarray.size(); i++) {
+    cout << uniqarray[i] << " ";
+  }
+}
+
+// EX 13; Известно, что на доске 8×8 можно расставить 8 ферзей так, чтобы они не били друг друга. Вам дана расстановка 8 ферзей на доске, определите, есть ли среди них пара бьющих друг друга.
+
