@@ -1540,3 +1540,38 @@ int main() {
 
 // ОСВОЕНЫ ЦИКЛЫ FOR И МАССИВЫ. СЛЕДУЮЩАЯ ТЕМА - ДВУМЕРНЫЕ МАССИВЫ.
 
+// EX 1; Найдите индексы первого вхождения максимального элемента.
+
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, m, k, max;
+  cin >> n >> m;
+  int a[n][m];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      cin >> a[i][j];
+      max = a[0][0];
+    }
+  }
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      if (a[i][j] > max) {
+        max = a[i][j];
+      }
+    }
+  }
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      if (a[i][j] == max) {
+        cout << i << " " << j;
+        break;
+      }
+    }  
+  }
+  //cout << i << " " << j;
+}
