@@ -1446,3 +1446,75 @@ int main() {
 
 // EX 13; Известно, что на доске 8×8 можно расставить 8 ферзей так, чтобы они не били друг друга. Вам дана расстановка 8 ферзей на доске, определите, есть ли среди них пара бьющих друг друга.
 
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int a, b, c, d, n = 8, k = 0;
+  string temp;
+  vector <int> x(n);
+  vector <int> y(n);
+  for (int i = 0; i < n; i++)  {
+    cin >> x[i];
+    cin >> y[i];
+  }
+  for (int i = 0; i < n; i++) {
+    a = x[i];
+    b = y[i];
+    //cout << "a = " << a << "b = " << b << endl;
+    for (int j = 0; j < n; j++) {
+      c = x[j];
+      d = y[j];
+      //cout << "c = " << c << "d = " << d << endl;
+      if (((abs(a - c) == abs(b - d)) || (a == c || b == d)) && j != i ? k++ : k) {
+        //cout << "YES";
+        //j++;
+        //k++;
+        //break;
+        //cout << "K = " << k << endl;
+      } else {
+        temp = "NO";
+        //j++;
+        
+    }
+    }
+  }
+  cout << (k == 0 ? "NO" : "YES");
+}
+
+// МОДИФИЦИРОВАННОЕ РЕШЕНИЕ
+
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int a, b, c, d, n = 8, k = 0;
+  vector <int> x(n);
+  vector <int> y(n);
+  for (int i = 0; i < n; i++)  {
+    cin >> x[i];
+    cin >> y[i];
+  }
+  for (int i = 0; i < n; i++) {
+    a = x[i];
+    b = y[i];
+    for (int j = 0; j < n; j++) {
+      c = x[j];
+      d = y[j];
+      if (((abs(a - c) == abs(b - d)) || (a == c || b == d)) && j != i ? k++ : k) {
+      }
+      continue;
+      }
+    }
+    cout << (k == 0 ? "NO" : "YES");
+  }
+
+// EX 14; N кеглей выставили в один ряд, занумеровав их слева направо числами от 1 до N. Затем по этому ряду бросили K шаров, при этом i-й шар сбил все кегли с номерами от li до ri включительно. Определите, какие кегли остались стоять на месте.
+
