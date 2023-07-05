@@ -1569,9 +1569,8 @@ int main() {
     for (int j = 0; j < m; j++) {
       if (a[i][j] == max) {
         cout << i << " " << j;
-        break;
+        return 0;
       }
     }  
   }
-  //cout << i << " " << j;
 }
