@@ -1690,3 +1690,38 @@ int main() {
 
 EX 5; Дан двумерный массив и два числа: i и j. Поменяйте в массиве столбцы с номерами i и j
 
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, m, k, l;
+  cin >> n >> m;
+  int a[n][m];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      cin >> a[i][j];
+    }
+  }
+  cin >> k >> l;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+  if (j == k) {
+    swap(a[i][j], a[i][l]);
+  }
+    }
+  }
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+      cout << a[i][j] << " ";
+    }
+    cout << endl;
+  }
+  return 0;
+}
+
+// EX 6; Дано число n, не превосходящее 10, и массив размером n × n. Проверьте, является ли этот массив симметричным относительно главной диагонали. Выведите слово “YES”, если массив симметричный, и слово “NO” в противном случае.
+
