@@ -1612,3 +1612,81 @@ int main() {
 
 // EX 3; Дано число n, не превышающее 100. Создайте массив размером n×n и заполните его по следующему правилу.
 
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, k;
+  cin >> n;
+  int a[n][n];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (i == j) {
+        a[i][j] = 0;
+      } else if (i != j) {
+        k = abs(i - j);
+        a[i][j] = k;
+    }
+  }
+} 
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n; j++) {
+      cout << a[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
+
+// EX 4; Дано число n, не превышающее 100. Создайте массив размером n×n и заполните его по следующему правилу. На главной диагонали должны быть записаны числа 0. На двух диагоналях, прилегающих к главной, числа 1. На следующих двух диагоналях числа 2, и т.д. Выведите полученный массив на экран, разделяя элементы массива пробелами.
+
+#include <iostream>
+#include <cmath>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, k;
+  cin >> n;
+  int a[n][n];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      if (i == j) {
+        a[i][j] = 0;
+      } else if (i != j) {
+        k = abs(i - j);
+        a[i][j] = k;
+    }
+  }
+} 
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n; j++) {
+      cout << a[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
+
+// КОРОТКОЕ РЕШЕНИЕ
+
+#include <iostream>
+using namespace std;
+int main() {
+	int n;
+	cin >> n;
+	int a[100][100];
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			a[i][j] = abs(i - j);
+			cout << a[i][j]<<" ";
+		}
+		cout << endl;
+	}
+	return 0;
+}
+
+EX 5; Дан двумерный массив и два числа: i и j. Поменяйте в массиве столбцы с номерами i и j
+
