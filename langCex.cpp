@@ -1725,7 +1725,39 @@ int main() {
 
 // EX 6; Дано число n, не превосходящее 10, и массив размером n × n. Проверьте, является ли этот массив симметричным относительно главной диагонали. Выведите слово “YES”, если массив симметричный, и слово “NO” в противном случае.
 
+#include <iostream>
+#include <algorithm>
+#include <cmath>
+#include <vector>
 
+using namespace std;
+
+int main() {
+  int n, temp, comp, i1, j1;
+  cin >> n;
+  int a[10][10];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      cin >> a[i][j];
+    }
+  }
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      temp = a[i][j];
+      i1 = i;
+      j1 = j;
+      comp = a[j1][i1];
+      if (temp != comp) {
+        cout << "NO";
+        return 0;
+      } else {
+        continue;
+      }
+      }
+  }
+  cout << "YES";
+  return 0;
+}
 
 EX 7; Дан квадратный двумерный массив размером n × n и число k. Выведите элементы k-й по счету диагонали ниже главной диагонали (т.е. если k = 1, то нужно вывести элементы первой диагонали, лежащей ниже главной, если k = 2, то второй диагонали и т.д.).
 
@@ -1796,4 +1828,36 @@ int main() {
 
 // EX 8;  Для данного массива постройте транспонированный массив и выведите его на экран.
 
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, m;
+  cin >> n >> m;
+  int a[1000][1000];
+  int a1[1000][1000];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      cin >> a[i][j];
+    }
+  }
+  swap(n,m);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      a1[i][j] = a[j][i];
+    }
+  }
+
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+      cout << a1[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
+
+// EX 9; Поступил запрос на продажу k билетов на соседние места в одном ряду. Определите, можно ли выполнить такой запрос.
 
