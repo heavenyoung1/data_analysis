@@ -1767,3 +1767,33 @@ int main() {
   }
   return 0;
 }
+
+//КОРОТКОЕ РЕШЕНИЕ 
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, k;
+  cin >> n;
+  int a[10][10];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+      cin >> a[i][j];
+    }
+  }
+  cin >> k;
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        if (i - j == k) {
+          cout << a[i][j] << " ";
+        }
+    }
+  }
+}
+
+// EX 8;  Для данного массива постройте транспонированный массив и выведите его на экран.
+
+
