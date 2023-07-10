@@ -1901,4 +1901,46 @@ int main() {
 
 // EX 10; Дан прямоугольный массив размером n×m. Поверните его на 90 градусов по часовой стрелке, записав результат в новый массив размером m×n.
 
+#include <iostream>
+#include <algorithm>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, m, l = 0;
+  cin >> n >> m;
+  int a[100][100];
+  int a1[100][100];
+  int a2[100][100];
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      cin >> a[i][j];
+    }
+  }
+  swap(n,m);
+  for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+      a1[i][j] = a[j][i];
+    }
+  }
+
+  for (int i = 0; i < n; i++) {
+    l = 0;
+    for (int j = m - 1; j >= 0; j--) {
+      a2[i][l] = a1[i][j];
+      l++;
+    }
+  }
+
+  for(int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+      cout << a2[i][j] << " ";
+    }
+    cout << endl;
+  }
+}
+
+// EX 11; По данным числам n и m заполните двумерный массив размером n×m числами от 1 до n×m “змейкой”, как показано в примере.
+
 
