@@ -1864,36 +1864,41 @@ int main() {
 //В кинотеатре n рядов по m мест в каждом (n и m не превосходят 20). В двумерном массиве хранится информация о проданных билетах, число 1 означает, что билет на данное место уже продан, число 0 означает, что место свободно. Поступил запрос на продажу k билетов на соседние места в одном ряду. Определите, можно ли выполнить такой запрос.
 
 #include <iostream>
-#include <algorithm>
-#include <cmath>
 #include <vector>
 
 using namespace std;
 
 int main() {
-  int n, m, k, count, r = 0;
+  int n, m, k, row = 0, count = 0;
   cin >> n >> m;
   int a[20][20];
-  int a1[n][m];
   for (int i = 0; i < n; i++) {
     for (int j = 0; j < m; j++) {
       cin >> a[i][j];
     }
   }
   cin >> k;
-  for(int i = 0; i < n; i++) {
-    r++;
-    count = 0;
-    for (int j = 0; j < m; j++) {
-      if (count == k) {
-        cout << r;
-        return 0;
-      } else if (a[i][j] == 0) {
-        count++;
-      } else if(a[i][j] == 1) {
+    for (int i = 0; i < n; i++) {
         count = 0;
-      }
-
+        for (int j = 0; j < m; j++) {
+            if (a[i][j] == 0) {
+                count++;
+                if (count == k) {
+                    row = i + 1;
+                    break;
+                }
+            } else {
+                count = 0;
+            }
         }
-      }
+        if (count == k) {
+            break;
+        }
+    }
+    cout << row << endl;
+    return 0;
 }
+
+// EX 10; Дан прямоугольный массив размером n×m. Поверните его на 90 градусов по часовой стрелке, записав результат в новый массив размером m×n.
+
+
