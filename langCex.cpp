@@ -1977,3 +1977,35 @@ int main() {
 
 // EX 12; По данным числам n и m заполните двумерный массив размером n×m числами от 1 до n×m “диагоналями”, как показано в примере.
 
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n, m, k = 1, d, l = 0;
+  cin >> n >> m;
+  int a[100][100];
+  for (int d = m + n - 1; l < d; l++) {
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        if (i == l - j || j == l - i) {
+          a[i][j] = k;  
+          k++;
+        }
+        continue;
+      }
+    }
+  }
+  for (int i = 0; i < n; i++) {
+    for(int j = 0; j < m; j++) {
+      cout << setw(4) << a[i][j];
+    }
+    cout << endl;
+  }
+}
+
+// EX 13; Даны числа n и m. Заполните массив размером n × m в шахматном порядке: клетки одного цвета заполнены нулями, а другого цвета - заполнены числами натурального ряда сверху вниз, слева направо. В левом верхнем углу записано число 1.
+
