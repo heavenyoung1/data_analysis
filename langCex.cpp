@@ -2147,3 +2147,19 @@ int main() {
 
 // EX 5; Даны пять действительных чисел: x, y, xc, yc, r. Проверьте, принадлежит ли точка (x, y) кругу с центром (xc, yc) и радиусом r. Если точка принадлежит кругу, выведите слово YES, иначе выведите слово NO.
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool IsPointInCircle(double x,double y, double xc, double yc, double r) {
+  return (pow((x - xc), 2) + pow((y - yc), 2) <= pow(r, 2));
+}
+
+int main() {
+  double x, y, xc, yc, r;
+  cin >> x >> y >> xc >> yc >> r;
+  cout << (IsPointInCircle(x, y, xc, yc, r) == 1 ? "YES" : "NO");
+}
+
+// EX 6; Основная программа должна считать координаты точки, вызвать функцию IsPointInArea и в зависимости от возвращенного значения вывести на экран необходимое сообщение.
+
