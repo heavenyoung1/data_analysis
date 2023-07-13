@@ -2098,3 +2098,36 @@ int main() {
 }
 
 // EX 3; Даны два действительных числа x и y. Проверьте, принадлежит ли точка с координатами (x, y) заштрихованному квадрату (включая его границу). Если точка принадлежит квадрату, выведите слово YES, иначе выведите слово NO. На рисунке сетка проведена с шагом 1.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool IsPointInSquare(double x, double y) {
+  return ((std::abs(x) <= 1 && std::abs(x) >= 0) && (std::abs(y) <= 1 && std::abs(y) >= 0));
+}
+
+int main() {
+  double x, y;
+  cin >> x >> y;
+  cout << (IsPointInSquare(x, y) == 1 ? "YES" : "NO");
+}
+
+// модифицированное решение 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+bool IsPointInSquare(double x, double y) {
+  return x * x <= 1 && y * y <= 1;
+}
+
+int main() {
+  double x, y;
+  cin >> x >> y;
+  cout << (IsPointInSquare(x, y) == 1 ? "YES" : "NO");
+}
+
+// EX 4; Даны два действительных числа x и y. Проверьте, принадлежит ли точка с координатами (x, y) заштрихованному квадрату (включая его границу). Если точка принадлежит квадрату, выведите слово YES, иначе выведите слово NO. На рисунке сетка проведена с шагом 1.
+
