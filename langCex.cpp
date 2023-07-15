@@ -2209,5 +2209,58 @@ int main() {
   cout << MinDivisor(n);
 }
 
+// РЕШЕНИЕ ПРИ ПОМОЩИ РЕКУРСИИ 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int MinDivisor(int n, int i = 2) {
+    return (n % i == 0) ? i : i > sqrt(n) ? n : MinDivisor(n, i + 1);
+}
+int main () {
+    int n;
+    cin >> n;
+    cout << MinDivisor(n);
+}
+
 // EX 8; Дано натуральное число n > 1. Проверьте, является ли оно простым. Программа должна вывести слово YES, если число простое и NO, если число составное.
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int MinDivisor(int n) {
+  for (int i = 2, qua = sqrt(n); i <= qua; i++) {
+    if (n % i == 0) {
+      return false;
+    } else if (i == qua) {
+      break;
+    }
+  }
+  return true;
+}
+  
+int main() {
+  int n;
+  cin >> n;
+  cout << (MinDivisor(n) == 1 ? "YES" : "NO");
+}
+
+//КОРОТКОЕ РЕШЕНИЕ
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int MinDivisor(int n, int i = 2) {
+    return (n % i == 0) ? i : i > sqrt(n) ? n : MinDivisor(n, i + 1);
+}
+int main () {
+    int n;
+    cin >> n;
+    cout << (MinDivisor(n) == n ? "YES" : "NO");
+}
+
+// EX 9; Возводить в степень можно гораздо быстрее, чем за n умножений! Для этого нужно воспользоваться следующими рекуррентными соотношениями:
 
