@@ -2264,3 +2264,22 @@ int main () {
 
 // EX 9; Возводить в степень можно гораздо быстрее, чем за n умножений! Для этого нужно воспользоваться следующими рекуррентными соотношениями:
 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+double fast_power(double a, int n) {
+  if (n == 0) return 1;
+  if (n % 2 == 1) return a * fast_power(a, n - 1);
+  else return fast_power(a * a, n / 2);
+}
+
+int main () {
+    double a;
+    int n;
+    cin >> a >> n;
+    cout << fast_power(a, n);
+}
+
+// EX 10; Дана последовательность чисел, завершающаяся числом 0. Найдите сумму всех этих чисел, не используя цикл.
+
