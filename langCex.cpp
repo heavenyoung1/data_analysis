@@ -2318,3 +2318,40 @@ int main() {
   cout << fib(n);
 }
 
+// CТРОКИ И СИМВОЛЫ
+// По введенному символу определите, является ли он цифрой.
+
+#include <iostream>
+#include <string>
+using namespace std;
+  
+int main() {
+  char n;
+  cin >> n;
+  cout << (int(n) >= 48 and int(n) <= 57 ? "yes" : "no");
+}
+
+// СОВРЕМЕННОЕ РЕШЕНИЕ 
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+	char a;
+	cin >> a;
+	cout << (isdigit(a) ? "yes" : "no");
+	return 0;
+}
+
+// Переведите символ в верхний регистр.
+
+#include <iostream>
+#include <string>
+using namespace std;
+  
+int main() {
+  char n;
+  cin >> n;
+  n = toupper(n);
+  cout << n;
+}
