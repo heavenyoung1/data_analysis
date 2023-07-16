@@ -2303,3 +2303,18 @@ int main() {
 Первое и второе числа Фибоначчи равны 1, а каждое следующее равно сумме двух предыдущих.
 
 	
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int fib(int n) {
+  if (n <= 2) return 1;
+  else return fib(n - 1) + fib(n - 2);
+  }
+
+int main() {
+  int n;
+  cin >> n;
+  cout << fib(n);
+}
+
