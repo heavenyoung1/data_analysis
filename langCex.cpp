@@ -2376,3 +2376,42 @@ int main() {
 
 // Дана строка, содержащая пробелы. Найдите, сколько в ней слов (слово – это последовательность непробельных символов, слова разделены одним пробелом, первый и последний символ строки – не пробел).
 
+#include <iostream>
+#include <string>
+using namespace std;
+  
+int main() {
+  int size, spaces = 1;
+  string s;
+  getline(cin, s);
+  size = s.length();
+  for (int i = 0; i < size; i++) {
+    if (s[i] == ' ') {
+      spaces++;
+    }
+    continue;
+  }
+  cout << spaces;
+}
+
+// короткое решение
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  string s;
+  int lm = 1;
+  getline(cin, s);
+  for (auto c : s) {
+    if (isspace(c)) {
+      lm++;
+    }
+    continue;
+}
+  cout << lm;
+}
+
+// По данной строке определите, является ли она палиндромом (то есть, читается одинаково как слева-направо, так и справа-налево).
+
