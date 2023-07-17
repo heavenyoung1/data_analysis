@@ -2424,3 +2424,18 @@ int main(int lm = 1) {
 
 // По данной строке определите, является ли она палиндромом (то есть, читается одинаково как слева-направо, так и справа-налево).
 
+#include <iostream>
+#include <string>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string s, s1;
+  getline(cin, s);
+  s1 = s;
+  reverse(s.begin(), s.end());
+  cout << (s1 == s ? " yes" : "no");
+}
+
+// Найдите в данной строке самое длинное слово и выведите его.
+
