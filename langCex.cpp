@@ -2413,5 +2413,14 @@ int main() {
   cout << lm;
 }
 
+// САМОЕ КОРОТКОЕ РЕШЕНИЕ!
+
+#include <iostream>
+int main(int lm = 1) {
+  std::string s;
+  getline(std::cin, s);
+  for (auto c : s) if (isspace(c)) lm++;
+  std::cout << lm; }
+
 // По данной строке определите, является ли она палиндромом (то есть, читается одинаково как слева-направо, так и справа-налево).
 
