@@ -2439,3 +2439,34 @@ int main() {
 
 // Найдите в данной строке самое длинное слово и выведите его.
 
+#include <iostream>
+#include <string>
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  string maxWord, currentWord, s;
+  int maxLength = 0;
+  getline(cin, s);
+  s.append(" ");
+  for (auto c : s) {
+    if (c != ' ') {
+      currentWord += c;
+    } else if (c == ' ') {
+      if (currentWord.length() > maxLength) {
+        maxLength = currentWord.length();
+        maxWord = currentWord;
+        currentWord.clear();
+      }
+      currentWord.clear();
+    }
+  }
+  cout << maxWord;
+}
+
+// В сети интернет каждому компьютеру присваивается четырехбайтовый код, который принято записывать в виде четырех чисел, каждое из которых может принимать значения от 0 до 255, разделенных точками. Вот примеры правильных IP-адресов:
+//127.0.0.0
+//192.168.0.1
+//255.0.255.255
+//Напишите программу, которая определяет, является ли заданная строка правильным IP-адресом.
+
