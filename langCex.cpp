@@ -2470,3 +2470,44 @@ int main() {
 //255.0.255.255
 //Напишите программу, которая определяет, является ли заданная строка правильным IP-адресом.
 
+#include <iostream>
+#include <string>
+#include <bits/stdc++.h>
+
+using namespace std;
+bool isValidIpAddress(const string& str) {
+    vector<int> parts;
+    int numDots = 0;
+    istringstream s(str);
+    string part;
+    
+    while (getline(s, part, '.')) {
+        numDots++;
+        if (numDots > 4 || part.empty()) {
+          return false;
+        }
+        try {
+            int num = stoi(part);
+            if (num < 0 || num > 255) {
+                return false;
+            }
+            parts.push_back(num);
+        } catch (const invalid_argument& e) {
+            return false;
+        }
+    }
+    return numDots == 4 && !str.empty() && str.back() != '.';
+}
+
+int main() {
+    string input;
+    cin >> input;
+    if (isValidIpAddress(input)) {
+        cout << "YES" << endl;
+    } else {
+        cout << "NO" << endl;
+    }
+    return 0;
+}
+
+//
