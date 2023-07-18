@@ -2510,4 +2510,22 @@ int main() {
     return 0;
 }
 
-//
+// короткое решение 
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  int a, b, c, d;
+  string s;
+  int n = scanf("%d.%d.%d.%d", &a, &b, &c, &d);
+  getline(cin, s);
+  cout << (n == 4 && s == "" && a >= 0 && a < 256 && b >=0 && b < 256 && c >= 0 && c < 256 && d >=0 && d < 256 ? "YES" : "NO");
+  return 0;
+}
+	  // СЛОВАРИ И МНОЖЕСТВА 
+// Дан список целых чисел, который может содержать до 100000 чисел. Определите, сколько в нем встречается различных чисел.
+
+	  
