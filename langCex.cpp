@@ -2653,3 +2653,21 @@ int main() {
 }
 
 // Однажды, разбирая старые книги на чердаке, школьник Вася нашёл англо-латинский словарь. Английский он к тому времени знал в совершенстве, и его мечтой было изучить латынь. Поэтому попавшийся словарь был как раз кстати.
+
+// СТАНДАРТНЫЕ АЛГОРИТМЫ STL
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  int n, temp;
+  cin >> n;
+  vector <int> v(n);
+  for (int i = 0; i < n; i++) cin >> v[i];
+  sort(v.begin(), v.end());
+  for (int i = 0; i < n; i++) cout << v[i] << " ";
+}
+
+// 
