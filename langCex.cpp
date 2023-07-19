@@ -2670,4 +2670,30 @@ int main() {
   for (int i = 0; i < n; i++) cout << v[i] << " ";
 }
 
-// 
+// В обувном магазине продается обувь разного размера. Известно, что одну пару обуви можно надеть на другую, если она хотя бы на три размера больше. В магазин пришел покупатель. Требуется определить, какое наибольшее количество пар обуви сможет предложить ему продавец так, чтобы он смог надеть их все одновременно.
+
+	  #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+  int n, size, count = 0;
+  cin >> size;
+  cin >> n;
+  vector <int> a(n);
+  for (int i = 0; i < n; i++) cin >> a[i];
+  sort(a.begin(), a.end());
+  unique(a.begin(), a.end());
+  for (int i = 0; i < n; i++) {
+    if ((a[i] - size) >= 3 && a[i] > size || a[i] == size && count < 1 || count == 0 && a[i] - size > 0) {
+      size = a[i];
+      count++;
+    }
+  }
+  cout << count;
+}
+
+//
+
+	  
