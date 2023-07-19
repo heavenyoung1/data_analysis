@@ -2595,4 +2595,61 @@ int main() {
 
 // Даны два списка чисел, которые могут содержать до 100000 чисел каждый.  Выведите все числа, которые входят как в первый, так и во второй список в порядке возрастания.
 
-	  
+// копипастим прыдыдущие решение и немного изменяем
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <set>
+using namespace std;
+
+int main() {
+  int n, x;
+  cin >> n;
+  set <int> s1, s2, s3;
+  for (int i = 0; i < n; i++) {
+    cin >> x;
+    s1.insert(x);
+  }
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cin >> x;
+    s2.insert(x);
+  }
+  set_intersection(s1.begin(), s1.end(), 
+                   s2.begin(), s2.end(),
+                   inserter(s3, s3.begin()));
+  for (auto& item : s3)
+         cout << item << " ";
+ 
+  cout << endl;
+	  }
+
+// Вам дан словарь, состоящий из пар слов. Каждое слово является синонимом к парному ему слову. Все слова в словаре различны. Для одного данного слова определите его синоним.
+
+#include <iostream>
+#include <string>
+#include <map>
+using namespace std;
+
+int main() {
+  map <string, string> dict;
+  int n;
+  string key, value, x;
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cin >> key >> value;
+    dict[key] = { value };
+  }
+  cin >> x;
+  for (auto now: dict) {
+    if (x == now.first) {
+      cout << now.second;
+    }
+    if (x == now.second) {
+      cout << now.first;
+    }
+  }
+}
+
+// Однажды, разбирая старые книги на чердаке, школьник Вася нашёл англо-латинский словарь. Английский он к тому времени знал в совершенстве, и его мечтой было изучить латынь. Поэтому попавшийся словарь был как раз кстати.
