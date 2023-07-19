@@ -2528,4 +2528,71 @@ int main() {
 	  // СЛОВАРИ И МНОЖЕСТВА 
 // Дан список целых чисел, который может содержать до 100000 чисел. Определите, сколько в нем встречается различных чисел.
 
+#include <iostream>
+#include <string>
+#include <set>
+using namespace std;
+
+int main() {
+  int n, x;
+  cin >> n;
+  set <int> s;
+  for (int i = 0; i < n; i++) {
+    cin >> x;
+    s.insert(x);
+  }
+  cout << s.size();
+}
+
+// Во входной строке записана последовательность чисел через пробел. Для каждого числа выведите слово YES (в отдельной строке), если это число ранее встречалось в последовательности или NO, если не встречалось.
+
+#include <iostream>
+#include <string>
+#include <set>
+using namespace std;
+
+int main() {
+  int n, x;
+  cin >> n;
+  multiset <int> s;
+  for (int i = 0; i < n; i++) {
+    cin >> x;
+    if (s.find(x) == s.end()) {
+      cout << "NO" << endl;
+      s.insert(x);
+    } else { 
+      cout << "YES" << endl;
+    }
+  }
+}
+
+// ﻿Даны два списка чисел, которые могут содержать до 100000 чисел каждый. Посчитайте, сколько чисел содержится одновременно как в первом списке, так и во втором.
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <set>
+using namespace std;
+
+int main() {
+  int n, x;
+  cin >> n;
+  set <int> s1, s2, s3;
+  for (int i = 0; i < n; i++) {
+    cin >> x;
+    s1.insert(x);
+  }
+  cin >> n;
+  for (int i = 0; i < n; i++) {
+    cin >> x;
+    s2.insert(x);
+  }
+  set_intersection(s1.begin(), s1.end(), 
+                   s2.begin(), s2.end(),
+                   inserter(s3, s3.begin()));
+  cout << s3.size();
+}
+
+// Даны два списка чисел, которые могут содержать до 100000 чисел каждый.  Выведите все числа, которые входят как в первый, так и во второй список в порядке возрастания.
+
 	  
