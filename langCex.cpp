@@ -2694,6 +2694,35 @@ int main() {
   cout << count;
 }
 
-//
+// Во время проведения олимпиады каждый из участников получил свой идентификационный номер – натуральное число. Необходимо отсортировать список участников олимпиады по количеству набранных ими баллов.
 
 	  
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <utility>
+using namespace std;
+
+bool comp(pair <int, int> a, pair <int, int> b) {
+    if (a.second == b.second) {
+      return (a.first > b.first);
+    }
+    return a.second < b.second;
+} 
+
+int main() {
+  int n, id, score;
+  cin >> n;
+  vector <pair <int, int>> a;
+  for (int i = 0; i < n; i++) {
+    cin >> id >> score;
+    a.emplace_back(id, score);
+  }
+  sort (a.rbegin(), a.rend(), comp);
+  for (const auto& now: a) {
+    cout << now.first <<  " " << now.second << endl;
+  }  
+  return 0;
+}
+
+//
